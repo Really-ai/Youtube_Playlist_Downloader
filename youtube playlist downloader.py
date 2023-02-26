@@ -2,7 +2,7 @@ from pytube import Playlist
 import os
 from os import path
 
-p=Playlist("https://www.youtube.com/playlist?list=PLVPtvlcflR0WwFCeMBMYWgYVwmtonpt8j")
+p=Playlist("https://www.youtube.com/playlist?list=OLAK5uy_k6iKeheE0WxCK6aPBiG2Fi3Hcd-sLRa10")
 
 def is_string_in_list(string1,list1):
     for item in list1:
