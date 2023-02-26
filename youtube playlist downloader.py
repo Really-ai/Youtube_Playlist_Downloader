@@ -1,12 +1,16 @@
 from pytube import Playlist
 import os
 from os import path
+from difflib import SequenceMatcher
 
-p=Playlist("https://www.youtube.com/playlist?list=OLAK5uy_k6iKeheE0WxCK6aPBiG2Fi3Hcd-sLRa10")
+p=Playlist("https://www.youtube.com/playlist?list=PLVPtvlcflR0WwFCeMBMYWgYVwmtonpt8j")
+
+def similar_string(a, b):
+    return SequenceMatcher(None, a, b).ratio()
 
 def is_string_in_list(string1,list1):
     for item in list1:
-        if string1 in item:
+        if (similar_string(string1,item)>.7):
             return True
     return False
 
@@ -27,7 +31,7 @@ while(all_is_not_downloaded):
         total=len(all_videos)
         for video in all_videos:
             print(f'[{counter}/{total}] {video.title}')
-            #video.streams.get_audio_only().download(output_path=f'{p.title}')
+            video.streams.get_audio_only().download(output_path=f'{p.title}')
             counter+=1
         all_is_not_downloaded=False
         
