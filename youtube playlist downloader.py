@@ -3,7 +3,7 @@ import os
 from os import path
 from difflib import SequenceMatcher
 
-p=Playlist("https://www.youtube.com/playlist?list=PLVPtvlcflR0WwFCeMBMYWgYVwmtonpt8j")
+p=Playlist("https://www.youtube.com/playlist?list=OLAK5uy_k6iKeheE0WxCK6aPBiG2Fi3Hcd-sLRa10")
 
 def similar_string(a, b):
     return SequenceMatcher(None, a, b).ratio()
